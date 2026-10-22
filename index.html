@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ADVANTER Advisory · Network CRM</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@700&display=swap">
+<style>
+:root{--bg:#EAF0F6;--card:#fff;--ink:#0B1F3A;--mut:#5B6B7F;--acc:#F2A900;--teal:#12A39A;--line:#d5dee8;--hd:#0B1F3A;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#081628;--card:#0f2542;--ink:#EAF0F6;--mut:#9fb0c4;--line:#243b5e;--hd:#0f2542;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#081628;--card:#0f2542;--ink:#EAF0F6;--mut:#9fb0c4;--line:#243b5e;--hd:#0f2542;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.45 Inter,Arial,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+header{background:var(--hd);color:#fff;padding:14px 20px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+header{border-bottom:3px solid var(--acc)}.lock{display:flex;align-items:center;gap:12px}.wm{font:700 19px/1 Montserrat,Arial,sans-serif;letter-spacing:.24em}.ds{display:block;font-size:10px;letter-spacing:.2em;color:#9fb0c4;margin-top:5px;text-transform:uppercase}.tag{color:var(--acc);font-size:12px;font-weight:600}h2,h3{font-family:Montserrat,Arial,sans-serif}footer{max-width:1300px;margin:8px auto 24px;padding:12px 20px;color:var(--mut);font-size:12px;border-top:2px solid var(--acc)}
+nav{margin-left:auto;display:flex;gap:6px}
+nav button,.btn{background:transparent;border:1px solid #ffffff55;color:#fff;padding:6px 14px;border-radius:6px;cursor:pointer;font:inherit}
+nav button.on{background:var(--acc);color:#0B1F3A;border-color:var(--acc);font-weight:600}
+main{padding:16px 20px;max-width:1300px;margin:auto}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px}
+.drop{text-align:center;padding:48px 20px}.drop h2{margin:0 0 6px}.drop p{color:var(--mut)}
+.pri{background:var(--acc);color:#0B1F3A;border:0;padding:10px 20px;border-radius:8px;font-weight:700;cursor:pointer}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:12px 0}
+.kpi small{color:var(--mut);display:block;font-size:11px;letter-spacing:.05em}.kpi b{font-size:24px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
+.bar{display:grid;grid-template-columns:130px 1fr 52px;gap:8px;align-items:center;margin:5px 0;font-size:12px}
+.bar i{display:block;height:10px;background:var(--teal);border-radius:5px}.bar span:last-child{text-align:right;color:var(--mut)}
+.bar span:first-child{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+h3{margin:0 0 8px;font-size:13px;color:var(--mut);letter-spacing:.05em;text-transform:uppercase}
+.insight{border-left:4px solid var(--acc);padding:10px 14px}
+.filters{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;margin-bottom:10px}
+input,select,textarea{font:inherit;padding:6px 8px;border:1px solid var(--line);border-radius:6px;background:var(--card);color:var(--ink);max-width:100%}
+.tw{overflow-x:auto}table{border-collapse:collapse;width:100%;min-width:900px}
+th{text-align:left;font-size:11px;color:var(--mut);padding:6px;border-bottom:2px solid var(--line)}td{padding:6px;border-bottom:1px solid var(--line);vertical-align:top}
+.sc{display:inline-block;min-width:26px;text-align:center;border-radius:12px;padding:1px 7px;font-weight:700;background:var(--teal);color:#fff}.sc.m{background:var(--acc);color:#0B1F3A}.sc.l{background:var(--mut)}
+.pg{display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin:10px 0}.pg button{min-width:36px;padding:6px 10px;border:1px solid var(--line);border-radius:6px;background:var(--card);color:var(--ink);cursor:pointer;font:inherit}.pg button.cur{background:var(--acc);color:#0B1F3A;border-color:var(--acc);font-weight:700}.pg button:disabled{opacity:.4;cursor:default}.pg input{width:64px}
+.board{display:flex;gap:10px;overflow-x:auto;align-items:flex-start;padding-bottom:8px}
+.col{min-width:230px;flex:1;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:8px}
+.col h4{margin:2px 4px 8px;font-size:12px;display:flex;justify-content:space-between}
+.pc{border:1px solid var(--line);border-radius:8px;padding:8px;margin-bottom:6px;font-size:12px}.pc select{width:100%;margin-top:6px;font-size:11px}
+.mut{color:var(--mut)}a{color:var(--teal)}textarea{width:100%;height:160px}
+</style></head><body>
+<header><div class="lock"><svg viewBox="0 0 48 48" width="40" height="40" aria-hidden="true"><path d="M9 41 24 11 39 41" fill="none" stroke="#fff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M16.5 30h15" stroke="#F2A900" stroke-width="4" stroke-linecap="round"/><circle cx="14.5" cy="30" r="3.6" fill="#F2A900"/><circle cx="33.5" cy="30" r="3.6" fill="#F2A900"/><circle cx="24" cy="8" r="4.2" fill="#12A39A"/></svg><div><span class="wm">ADVANTER</span><span class="ds">Supply chain advisory</span></div></div><span class="tag">Advance the chain.</span>
+<nav id="nav" hidden><button data-t="dash" class="on">Dashboard</button><button data-t="list">Contacts</button><button data-t="pipe">Pipeline</button></nav></header>
+<main>
+<div id="load" class="card drop"><div style="display:inline-block;background:#0B1F3A;border-radius:14px;padding:10px;margin-bottom:10px"><svg viewBox="0 0 48 48" width="48" height="48" aria-hidden="true"><path d="M9 41 24 11 39 41" fill="none" stroke="#fff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M16.5 30h15" stroke="#F2A900" stroke-width="4" stroke-linecap="round"/><circle cx="14.5" cy="30" r="3.6" fill="#F2A900"/><circle cx="33.5" cy="30" r="3.6" fill="#F2A900"/><circle cx="24" cy="8" r="4.2" fill="#12A39A"/></svg></div><h2>Loading your network…</h2><p id="msg">Fetching profiles and shared edits.</p></div>
+<div id="app" hidden>
+<div id="fbar" class="card" style="margin-bottom:12px"><div class="filters">
+<input id="f_q" placeholder="Keyword (name, title, company…)"><input id="f_co" placeholder="Company contains…">
+<select id="f_fn"></select><select id="f_sen"></select><select id="f_ind"></select><select id="f_rel"></select><select id="f_st"></select>
+<select id="f_sort"><option value="">Original order</option><option value="p">Priority score ↓</option><option value="n">Newly added first</option></select></div>
+<span id="count" class="mut"></span><span id="ro" class="mut" hidden> · 🔒 Read-only access: you can browse and search but not edit.</span> · <a href="#" id="exp">Export my edits (CSV)</a> <button class="pri" id="add" style="padding:5px 14px;margin-left:8px">+ Add contact</button></div>
+<div id="addform" class="card" hidden style="margin-bottom:12px"></div>
+<div id="view"></div></div>
+</main>
+<footer><b>ADVANTER Advisory</b> · Advance the chain. · Confidential: for authorised ADVANTER clients and team only.</footer>
+<script>
+const ST=["Not contacted","Warm-up (engage on content)","Intro message sent","In conversation","Meeting booked","Client","Not a fit"];
+const SEN={"C-Level":5,"VP/SVP/EVP":4,"Director/Head":3,"Manager":2,"Specialist":1,"Other":0};
+const REL={High:3,Medium:2,Low:1};
+const FN={"Supply Chain":4,"Logistics":4,"Procurement":4,"Operations":4,"Finance":2,"Senior Leadership":3,"Sales & Business Development":2,"Marketing & Communications":1,"Technology & Digital":2,"Human Resources":1,"Consulting & Strategy":3,"Project & Program Management":2,"Legal, Risk & Compliance":1,"Product & Research":2,"Administration":1,"Other":0};
+const DM=["C-Level","VP/SVP/EVP","Director/Head"],CORE=["Supply Chain","Logistics","Procurement","Operations"];
+const $=s=>document.querySelector(s);
+const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const fix=s=>{s=String(s==null?'':s);if(/[ÃÂâð]/.test(s)){try{return decodeURIComponent(escape(s))}catch(e){}}return s};
+const score=r=>(REL[r.rel]||0)+(SEN[r.sen]||0)+(FN[r.fn]||0);
+const key=r=>'r'+r.i;
+const DATA_URL="contacts.json";
+let D=[],E={},byI={},view=[],page=0,tab='dash',RO=false,dbc=null;let PS=50;
+function build(rows){D=rows.map((a,p)=>{const r={p,i:a[0],first:a[1],last:a[2],title:a[3],co:a[4],fn:a[5],sen:a[6],ind:a[7],url:a[8],rship:a[9],rel:a[10],notes:a[11],stage:a[12]};
+ Object.assign(r,E[key(r)]||{});r.sc=score(r);r.k=(r.first+' '+r.last+' '+r.title+' '+r.co+' '+r.ind).toLowerCase();byI[r.i]=r;return r});init()}
+function setE(id,d){E[id]=d;const r=byI[+id.slice(1)];if(r){Object.assign(r,d);r.sc=score(r)}}
+const LB={};
+const leadDoc=r=>({first:r.first,last:r.last,title:r.title,co:r.co,fn:r.fn,sen:r.sen,ind:r.ind,url:r.url,rship:r.rship||'',rel:r.rel,notes:r.notes,stage:r.stage,added:r.added||''});
+function upLead(id,d){let r=LB[id];if(!r){r=LB[id]={p:D.length,i:'L'+id,lead:true,id};D.push(r)}
+ Object.assign(r,{first:d.first||'',last:d.last||'',title:d.title||'',co:d.co||'',fn:d.fn||'',sen:d.sen||'',ind:d.ind||'',url:d.url||'',rship:d.rship||'',rel:d.rel||'',notes:d.notes||'',stage:d.stage||'',added:d.added||''});
+ r.sc=score(r);r.k=(r.first+' '+r.last+' '+r.title+' '+r.co+' '+r.ind).toLowerCase()}
+const O=(a,h)=>'<option value="">'+h+'</option>'+a.map(o=>'<option>'+esc(o)+'</option>').join('');
+$('#addform').innerHTML='<h3>Add contact</h3><div class="filters"><input id="n_first" placeholder="First name *"><input id="n_last" placeholder="Last name"><input id="n_title" placeholder="Job title"><input id="n_co" placeholder="Company"><select id="n_fn">'+O(Object.keys(FN),'Function…')+'</select><select id="n_sen">'+O(Object.keys(SEN),'Level…')+'</select><input id="n_ind" list="n_inds" placeholder="Industry"><datalist id="n_inds"></datalist><input id="n_url" placeholder="LinkedIn URL"><select id="n_rel"><option>High</option><option selected>Medium</option><option>Low</option></select><select id="n_stage">'+ST.map(o=>'<option>'+esc(o)+'</option>').join('')+'</select></div><input id="n_notes" placeholder="Notes" style="width:100%;margin-bottom:8px"><button class="pri" id="n_save" style="padding:6px 16px">Save contact</button> <button class="btn" id="n_cancel" style="color:var(--ink);border-color:var(--line)">Cancel</button> <span id="n_msg" class="mut"></span>';
+$('#add').onclick=()=>{const f=$('#addform');f.hidden=!f.hidden;$('#n_inds').innerHTML=uniq('ind').map(v=>'<option value="'+esc(v)+'">').join('')};
+$('#n_cancel').onclick=()=>{$('#addform').hidden=true};
+$('#n_save').onclick=async()=>{const v=k=>$('#n_'+k).value.trim(),m=$('#n_msg'),n=u=>u.toLowerCase().replace(/\/$/,'');
+ if(!v('first')&&!v('last')){m.textContent='Enter at least a name.';return}
+ const url=v('url');if(url&&D.some(r=>r.url&&n(r.url)==n(url))){m.textContent='A contact with this LinkedIn URL already exists.';return}
+  const d={first:v('first'),last:v('last'),title:v('title'),co:v('co'),fn:v('fn'),sen:v('sen'),ind:v('ind'),url,rship:'',rel:v('rel'),stage:v('stage'),notes:v('notes'),added:new Date().toISOString().slice(0,10)};
+ try{let nid;if(dbc){const ref=dbc.collection('leads').doc();await ref.set(d);nid=ref.id}else{nid='l'+Date.now();const L=JSON.parse(localStorage.getItem('adv_leads')||'{}');L[nid]=d;localStorage.setItem('adv_leads',JSON.stringify(L))}upLead(nid,d);document.querySelectorAll('#addform input').forEach(i=>i.value='');m.textContent='Saved ✓';$('#f_sort').value='n';apply()}catch(e){m.textContent='Could not save. You may only have view access.'}};
+let rt;function soon(){clearTimeout(rt);rt=setTimeout(()=>{const a=document.activeElement;if(a&&a.closest&&a.closest('table'))return;if(!D.length)return;const p=page;apply();page=p;render()},250)}
+(async()=>{
+ try{const c=window.claude;if(c){dbc=await c.use('db');const u=await c.use('user');if(dbc&&u&&u.can&&u.can('data.write')===false)RO=true}}catch(e){}
+ if(!dbc){try{E=JSON.parse(localStorage.getItem('adv_edits')||'{}')}catch(e){}}
+ try{const res=await fetch(DATA_URL);if(!res.ok)throw 0;build(await res.json());if(!dbc){try{const L=JSON.parse(localStorage.getItem('adv_leads')||'{}');Object.keys(L).forEach(k=>upLead(k,L[k]));apply()}catch(x){}}}catch(e){$('#msg').textContent='Could not load the contact data. Please refresh or contact ADVANTER.';return}
+ if(dbc)dbc.collection('leads').onSnapshot(sn=>{sn.docChanges().forEach(c=>{if(c.type!='removed')upLead(c.doc.id,c.doc.data())});soon()},()=>{});
+ if(dbc)dbc.collection('edits').onSnapshot(sn=>{sn.docChanges().forEach(c=>{if(c.type!='removed')setE(c.doc.id,c.doc.data())});soon()},()=>{});
+})();
+function opts(id,label,list){$('#'+id).innerHTML='<option value="">'+label+'</option>'+list.map(v=>'<option>'+esc(v)+'</option>').join('')}
+const uniq=k=>[...new Set(D.map(r=>r[k]).filter(Boolean))].sort();
+function init(){$('#load').hidden=true;$('#app').hidden=false;$('#nav').hidden=false;$('#ro').hidden=!RO;$('#add').hidden=RO;
+ opts('f_fn','All functions',uniq('fn'));opts('f_sen','All levels',Object.keys(SEN));opts('f_ind','All industries',uniq('ind'));
+ opts('f_rel','All relevance',['High','Medium','Low']);opts('f_st','All stages',ST);
+ document.querySelectorAll('#fbar input,#fbar select').forEach(el=>el.oninput=apply);apply()}
+function apply(){const g=id=>$('#'+id).value,q=g('f_q').toLowerCase().trim().split(/\s+/).filter(Boolean),co=g('f_co').toLowerCase().trim();
+ view=D.filter(r=>q.every(w=>r.k.includes(w))&&(!co||r.co.toLowerCase().includes(co))&&(!g('f_fn')||r.fn==g('f_fn'))&&(!g('f_sen')||r.sen==g('f_sen'))&&(!g('f_ind')||r.ind==g('f_ind'))&&(!g('f_rel')||r.rel==g('f_rel'))&&(!g('f_st')||(r.stage||ST[0])==g('f_st')));
+ if(g('f_sort')=='p')view=view.slice().sort((a,b)=>b.sc-a.sc);if(g('f_sort')=='n')view=view.slice().sort((a,b)=>(b.lead?1:0)-(a.lead?1:0)||(b.added||'').localeCompare(a.added||''));page=0;render()}
+document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>{tab=b.dataset.t;document.querySelectorAll('nav button').forEach(x=>x.classList.toggle('on',x==b));render()});
+
+async function ed(p,f,v){if(RO)return;const r=D[p];r[f]=v;if(f=='rel')r.sc=score(r);
+ if(r.lead){try{if(dbc)await dbc.doc('leads/'+r.id).set(leadDoc(r));else{const L=JSON.parse(localStorage.getItem('adv_leads')||'{}');L[r.id]=leadDoc(r);localStorage.setItem('adv_leads',JSON.stringify(L))}}catch(e){RO=true;$('#ro').hidden=false;render();return}if(tab=='pipe'||f=='rel')render();return}
+ const id=key(r),d={...(E[id]||{}),[f]:v};E[id]=d;
+ if(dbc){try{await dbc.doc('edits/'+id).set(d)}catch(e){RO=true;$('#ro').hidden=false;render();return}}else{try{localStorage.setItem('adv_edits',JSON.stringify(E))}catch(x){}}
+ if(tab=='pipe'||f=='rel')render()}
+$('#exp').onclick=e=>{e.preventDefault();const q=s=>'"'+String(s||'').replace(/"/g,'""')+'"';
+ const rows=D.filter(r=>r.lead||E[key(r)]).map(r=>[r.url,r.first+' '+r.last,r.rel,r.stage,r.notes].map(q).join(','));
+ $('#view').innerHTML='<div class="card"><h3>Your edits ('+rows.length+')</h3><p class="mut">Copy this into a spreadsheet, or paste it back into the LinkedIn Database sheet.</p><textarea readonly>url,name,relevance,stage,notes\n'+esc(rows.join('\n'))+'</textarea></div>'};
+
+const bars=(t,m)=>{const e=Object.entries(m).sort((a,b)=>b[1]-a[1]),mx=e[0]?e[0][1]:1;
+ return '<div class="card"><h3>'+t+'</h3>'+e.map(([k,v])=>'<div class="bar"><span title="'+esc(k)+'">'+esc(k)+'</span><span><i style="width:'+(v/mx*100)+'%"></i></span><span>'+v.toLocaleString()+'</span></div>').join('')+'</div>'};
+const tally=(f,top)=>{const m={};D.forEach(r=>{const v=f(r);if(v)m[v]=(m[v]||0)+1});return top?Object.fromEntries(Object.entries(m).sort((a,b)=>b[1]-a[1]).slice(0,top)):m};
+const pct=n=>Math.round(n/D.length*100)+'%';
+
+function render(){$('#count').textContent=view.length.toLocaleString()+' of '+D.length.toLocaleString()+' profiles';
+ $('#fbar').hidden=tab=='dash';$('#view').innerHTML=tab=='dash'?dash():tab=='list'?list():pipe()}
+function dash(){const dm=D.filter(r=>DM.includes(r.sen)).length,core=D.filter(r=>CORE.includes(r.fn)).length,hi=D.filter(r=>r.rel=='High').length,
+ avg=(D.reduce((s,r)=>s+r.sc,0)/D.length).toFixed(1),conv=D.filter(r=>['In conversation','Meeting booked','Client'].includes(r.stage)).length;
+ const k=(l,v)=>'<div class="card kpi"><small>'+l+'</small><b>'+v+'</b></div>';
+ const stg={};ST.forEach(s=>stg[s]=0);D.forEach(r=>stg[r.stage||ST[0]]++);
+ return '<div class="card insight"><b>'+pct(dm)+'</b> of your network are decision-makers (Director and above), <b>'+pct(core)+'</b> sit in core supply-chain functions, and <b>'+hi.toLocaleString()+'</b> profiles are rated High relevance.</div>'+
+ '<div class="kpis">'+k('TOTAL PROFILES',D.length.toLocaleString())+k('DECISION-MAKERS',pct(dm))+k('CORE SUPPLY CHAIN',pct(core))+k('HIGH RELEVANCE',hi.toLocaleString())+k('AVG PRIORITY (0–12)',avg)+k('IN CONVERSATION+',conv)+'</div>'+
+ '<div class="grid">'+bars('Outreach stage',stg)+bars('Function',tally(r=>r.fn))+bars('Seniority',tally(r=>r.sen))+bars('Top industries',tally(r=>r.ind,10))+bars('Top companies',tally(r=>r.co,10))+'</div>'}
+const sel=(p,f,v,l)=>'<select onchange="ed('+p+',\''+f+'\',this.value)"'+(RO?' disabled':'')+'>'+l.map(o=>'<option'+(o==v?' selected':'')+'>'+esc(o)+'</option>').join('')+'</select>';
+const chip=s=>'<span class="sc '+(s>=8?'':s>=5?'m':'l')+'">'+s+'</span>';
+function go(x){page=Math.max(0,Math.min(Math.ceil(view.length/PS)-1,+x||0));render();window.scrollTo({top:0})}
+function pager(n){const w=[];const add=i=>{if(i>=0&&i<n&&!w.includes(i))w.push(i)};add(0);for(let i=page-2;i<=page+2;i++)add(i);add(n-1);w.sort((a,b)=>a-b);
+ let h='<div class="pg"><button onclick="go(0)" '+(page?'':'disabled')+' aria-label="First page">«</button><button onclick="go('+(page-1)+')" '+(page?'':'disabled')+'>‹ Prev</button>',last=-1;
+ w.forEach(i=>{if(i-last>1)h+='<span class="mut">…</span>';h+='<button class="'+(i==page?'cur':'')+'" onclick="go('+i+')" '+(i==page?'aria-current="page"':'')+'>'+(i+1)+'</button>';last=i});
+ h+='<button onclick="go('+(page+1)+')" '+(page<n-1?'':'disabled')+'>Next ›</button><button onclick="go('+(n-1)+')" '+(page<n-1?'':'disabled')+' aria-label="Last page">»</button>';
+ h+='<span class="mut" style="margin-left:8px">Go to</span><input type="number" min="1" max="'+n+'" placeholder="'+(page+1)+'" onkeydown="if(event.key===\'Enter\')go(this.value-1)" aria-label="Go to page">';
+ h+='<span class="mut" style="margin-left:8px">Show</span><select onchange="PS=+this.value;page=0;render()" aria-label="Rows per page">'+[25,50,100,200].map(v=>'<option'+(v==PS?' selected':'')+'>'+v+'</option>').join('')+'</select>';
+ return h+'<span class="mut" style="margin-left:auto">'+(view.length?(page*PS+1)+'–'+Math.min(view.length,page*PS+PS):0)+' of '+view.length.toLocaleString()+'</span></div>'}
+function list(){const n=Math.ceil(view.length/PS)||1;page=Math.min(page,n-1);
+ const rows=view.slice(page*PS,page*PS+PS).map(r=>'<tr><td><b>'+esc(r.first+' '+r.last)+'</b><br>'+(r.url?'<a href="'+esc(r.url)+'" target="_blank" rel="noopener">LinkedIn</a>':'')+'</td><td>'+esc(r.title)+'<br><span class="mut">'+esc(r.co)+'</span></td><td>'+esc(r.fn)+'<br><span class="mut">'+esc(r.sen)+'</span></td><td>'+chip(r.sc)+'</td><td>'+sel(r.p,'rel',r.rel,['','High','Medium','Low'])+'</td><td>'+sel(r.p,'stage',r.stage||ST[0],ST)+'</td><td><input value="'+esc(r.notes)+'" placeholder="Add note"'+(RO?' disabled':'')+' onchange="ed('+r.p+',\'notes\',this.value)"></td></tr>').join('');
+ return pager(n)+'<div class="card tw"><table><tr><th>Name</th><th>Role · Company</th><th>Function · Level</th><th>Priority</th><th>Relevance</th><th>Outreach stage</th><th>Notes</th></tr>'+rows+'</table></div>'+
+ pager(n)}
+function pipe(){const by={};ST.forEach(s=>by[s]=[]);view.forEach(r=>by[r.stage||ST[0]].push(r));
+ return '<p class="mut">Showing the top 20 per stage by priority score for the current filters. Move a person with the dropdown on their card.</p><div class="board">'+ST.map(s=>{
+  const l=by[s].slice().sort((a,b)=>b.sc-a.sc),cards=l.slice(0,20).map(r=>'<div class="pc"><b>'+esc(r.first+' '+r.last)+'</b> '+chip(r.sc)+'<br>'+esc(r.title)+'<br><span class="mut">'+esc(r.co)+'</span>'+sel(r.p,'stage',s,ST)+'</div>').join('');
+  return '<div class="col"><h4><span>'+esc(s)+'</span><span class="mut">'+l.length.toLocaleString()+'</span></h4>'+cards+(l.length>20?'<div class="mut" style="text-align:center">+'+(l.length-20).toLocaleString()+' more (use filters)</div>':'')+'</div>'}).join('')+'</div>'}
+</script></body></html>
